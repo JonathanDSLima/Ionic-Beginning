@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="Medium-tint">
+    <ion-title>
+      <ion-icon name="star-outline"></ion-icon>
+      Details
+      <ion-icon name="star-outline"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list lines="full">
+
+    <ion-item *ngIf="all">
+      <ion-input required type="text" placeholder="Task" [(ngModel)]="all.task"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="all">
+      <ion-input required type="number" placeholder="Priority" [(ngModel)]="all.priority"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-button expand="full" (click)="saveAll()"> Save </ion-button>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="warning">
+    <ion-fab-button color="warning" routerLink="/" routerDirection="forward" (click) = "removeIdAll(allId)">
+      <ion-icon name="trash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

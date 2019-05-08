@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color = "Medium-tint">
+    <ion-title>
+      Test CRUD
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item-sliding *ngFor = "let all of alls">
+      <ion-item lines= "inset" button [routerLink] = "['/details', all.id]">
+        <ion-label>
+          {{all.task}}
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options side = "end">
+        <ion-item-option (click)="onRemove(item)" color = "Warning">
+          <ion-icon name = "checkmark" slot = "end">
+          </ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <ion-fab vertical = "bottom" horizontal = "end" slot= "fixed">
+    <ion-fab-button routerLink = "/details" routerDirection = "forward">
+      <ion-icon name = "add-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
